@@ -34,13 +34,30 @@ $(document).ready(function () {
 
 function key_highlight(a) {
     key_clear(a);
-    $(key_prefix + a).addClass("key_highlight");
-    setTimeout("key_pressed('" + a + "')", 300);
+
+    // when pressing down super key (91), highlight caps lock (20) instead
+    if (a == 91) {
+        $(key_prefix + 20).addClass("key_highlight");
+        setTimeout("key_pressed('" + 20 + "')", 300);
+    }
+
+    else {
+        $(key_prefix + a).addClass("key_highlight");
+        setTimeout("key_pressed('" + a + "')", 300);
+    }
 }
 
 function key_pressed(a) {
     key_clear(a);
-    // changed a == 13 (enter) to key_pressed instead of key_pressed_m
+    
+    // when pressing down super key (91), highlight caps lock (20) instead
+    if (a == 91) {
+        new_class = "key_pressed";
+        $(key_prefix + 20).addClass(new_class);
+        return;
+    }
+
+    // changed a == 13 (enter) to key_pressed instead of key_pressed_m    
     if (a == 16 || a == 17 || a == 18 || a.match(/b$/)) {
         new_class = "key_pressed_m";
     }
