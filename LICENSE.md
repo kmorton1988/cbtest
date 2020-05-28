@@ -4,7 +4,7 @@ The CBTest.in Source Code project is being licensed under the MIT License struct
 
 ## License Text
 
-Copyright 2020 Kyle Morton [Github](https://github.com/kmorton1988) & Dillon Ching [Github](https://github.com/K-E-L)
+Copyright 2020 Kyle Morton ([Github](https://github.com/kmorton1988)) & Dillon Ching ([Github](https://github.com/K-E-L))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
