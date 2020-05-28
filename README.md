@@ -9,3 +9,7 @@ Developed for the purpose of testing chromebook devices, including Keyboard, Sou
 ## Installation
 
 Clone to your webserver's public html root folder, or the subfolder destined for the desired location. There are no back-end languages used, and fully runs in-browser. 
+
+## Licensing
+
+This project is licensed under the MIT License Structure ([License Declaration](https://github.com/kmorton1988/cbtest/blob/master/LICENSE.md))
