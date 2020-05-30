@@ -36,16 +36,24 @@ body {
     clear: both;
 }
 .key_un {
-    border-color: silver;
+    border-color: red;
+    background-color: red;
 }
 .key_highlight {
     border-color: orange;
+    background-color: orange;    
 }
 .key_pressed {
     border-color: green;
+    background-color: green;
+}
+.key_mod.key_highlight {
+    border-color: green;
+    background-color: green;
 }
 .key_pressed_m {
-    border-color: gray;
+    border-color: red;
+    background-color: red;
 }
 #resetbutton {
     clear: both;
