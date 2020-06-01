@@ -358,6 +358,10 @@ body {
     line-height: 1.5;
 }
 
+#loading_percent {
+    color: black
+}
+
 a {
   color: #3273dc;
   cursor: pointer;
