@@ -1,6 +1,9 @@
 var FALSE_FUNCTION = new Function("return false");
 var key_prefix = "#key";
 
+var keys_pressed = 0;
+var keys = new Set();
+
 $(document).bind("keydown", function (b) {
     if ($("#soundSelect").val() != "") {
         var a = new Audio("sounds/" + $("#soundSelect").val());
@@ -10,6 +13,7 @@ $(document).bind("keydown", function (b) {
 
 $(document).bind("keyup", function (b) {
     var a = b.keyCode ? b.keyCode : b.which;
+
     if (a == 186 || a == 59) {
         a = "colon";
     }
@@ -24,6 +28,13 @@ $(document).bind("keyup", function (b) {
     }
     if ($(key_prefix + a + "b")) {
         key_highlight(a + "b");
+    }
+
+    if(!keys.has(a)) {
+        keys.add(a);
+        keys_pressed++;
+        document.getElementById("loading_percent").innerHTML = Math.floor((keys_pressed / 60) * 100) + '%';
+        console.log(keys_pressed / 60);
     }
 });
 
@@ -54,16 +65,18 @@ function key_pressed(a) {
     if (a == 91) {
         new_class = "key_pressed";
         $(key_prefix + 20).addClass(new_class);
+        
         return;
     }
 
     // changed a == 13 (enter) to key_pressed instead of key_pressed_m    
     if (a == 16 || a == 17 || a == 18 || a.match(/b$/)) {
-        new_class = "key_pressed_m";
+        new_class = "key_pressed_m";        
     }
     else {
-        new_class = "key_pressed";
+        new_class = "key_pressed";       
     }
+
     $(key_prefix + a).addClass(new_class);
 }
 
