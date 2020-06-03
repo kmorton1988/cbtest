@@ -34,7 +34,7 @@ $(document).bind("keyup", function (b) {
             keys.add(a);            
         }
         document.getElementById("loading_percent").innerHTML = (keys.size / 60) * 100 + '%';
-        console.log(keys.size);
+        console.log('size ' + keys.size + ', ' + 'a ' + a);
     }
 });
 
