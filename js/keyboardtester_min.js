@@ -30,7 +30,7 @@ $(document).bind("keyup", function (b) {
     }
 
     if (!(keys.has(a))) {
-        if (!(a >= 112 && a <=123)) {
+        if (!(a >= 112 && a <=123) && (a != 166) && (a != 167)) {
             keys.add(a);            
         }
         document.getElementById("loading_percent").innerHTML = (keys.size / 60) * 100 + '%';
