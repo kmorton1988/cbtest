@@ -1,7 +1,6 @@
 var FALSE_FUNCTION = new Function("return false");
 var key_prefix = "#key";
 
-var keys_pressed = 0;
 var keys = new Set();
 
 $(document).bind("keydown", function (b) {
@@ -30,11 +29,12 @@ $(document).bind("keyup", function (b) {
         key_highlight(a + "b");
     }
 
-    if(!keys.has(a)) {
-        keys.add(a);
-        keys_pressed++;
-        document.getElementById("loading_percent").innerHTML = Math.floor((keys_pressed / 60) * 100) + '%';
-        console.log(keys_pressed / 60);
+    if (!(keys.has(a))) {
+        if (!(a >= 112 && a <=123)) {
+            keys.add(a);            
+        }
+        document.getElementById("loading_percent").innerHTML = (keys.size / 60) * 100 + '%';
+        console.log(keys.size);
     }
 });
 
