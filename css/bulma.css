@@ -358,8 +358,12 @@ body {
     line-height: 1.5;
 }
 
+.label {
+    color: black;
+}
+
 #loading_percent {
-    color: black
+    color: black;
 }
 
 a {
