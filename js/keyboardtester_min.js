@@ -3,41 +3,6 @@ var key_prefix = "#key";
 
 var keys = new Set();
 
-$(document).bind("keydown", function (b) {
-    if ($("#soundSelect").val() != "") {
-        var a = new Audio("sounds/" + $("#soundSelect").val());
-        a.play();
-    }
-});
-
-$(document).bind("keyup", function (b) {
-    var a = b.keyCode ? b.keyCode : b.which;
-
-    if (a == 186 || a == 59) {
-        a = "colon";
-    }
-    if (a == 189) {
-        a = 173;
-    }
-    if (a == 187) {
-        a = 61;
-    }
-    if ($(key_prefix + a)) {
-        key_highlight(a);
-    }
-    if ($(key_prefix + a + "b")) {
-        key_highlight(a + "b");
-    }
-
-    if (!(keys.has(a))) {
-        if (!(a >= 112 && a <=123) && (a != 166) && (a != 167)) {
-            keys.add(a);            
-        }
-        document.getElementById("loading_percent").innerHTML = (keys.size / 60) * 100 + '%';
-        console.log('size ' + keys.size + ', ' + 'a ' + a);
-    }
-});
-
 $(document).ready(function () {
     disableShortcuts();
     reset_keyboard();
@@ -70,7 +35,7 @@ function key_pressed(a) {
     }
 
     // changed a == 13 (enter) to key_pressed instead of key_pressed_m    
-    if (a == 16 || a == 17 || a == 18 || a.match(/b$/)) {
+    if (a.match(/b$/)) {
         new_class = "key_pressed_m";        
     }
     else {
@@ -117,3 +82,4 @@ function disableShortcuts() {
     }
     shortcut.add("'", FALSE_FUNCTION);
 }
+
