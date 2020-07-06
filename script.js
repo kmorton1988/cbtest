@@ -189,7 +189,6 @@ const keyCodes = {
     256: 'right shift',
     257: 'right ctrl',
     258: 'right alt',
-
 };
 
 const keyLocations = {
@@ -300,7 +299,7 @@ body.onkeydown = function(e) {
         if (!(a >= 112 && a <=123) && (a != 166) && (a != 167)) {
             keys.add(a);
         }
-        document.getElementById("loading_percent").innerHTML = (keys.size / 60) * 100 + '%';
+        document.getElementById("loading_percent").innerHTML = (keys.size / 63) * 100 + '%';
         console.log(e.keyCode, e.code);
         console.log('size ' + keys.size + ', ' + 'a ' + a);
     }
