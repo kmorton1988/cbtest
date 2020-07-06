@@ -17,13 +17,10 @@
     
     <script type="text/javascript" language="JavaScript" 
             src="js/keyboardtester_min.js"></script>
-    <script type="text/javascript" language="JavaScript" 
-            src="js/shortcut_min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bulma.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="css/keyboardtester_min.css" media="screen" />
-    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon" />
-
+    
     <!-- from keycodes -->
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
@@ -41,11 +38,10 @@
             <video autoplay class="video"></video>
           </div>  
           <div class="tile is-5 videofeed">
-            <video width="400" controls autoplay class="video">
+            <video id="myVideo" width="400" controls playsinline autoplay muted loopclass="video">
               <source src="mov_bbb.mp4" type="video/mp4">
                 <source src="mov_bbb.ogg" type="video/ogg">
-                  Your browser does not support HTML5 video.      
-                  
+                  Your browser does not support HTML5 video.
             </video> 
           </div>
         </div>
@@ -115,7 +111,7 @@
                 </div>
                 
                 <div class="key_row">
-                  <div id="key16" class="key_un key_mod">Shift</div>
+                  <div id="key16" class="key_un">Shift</div>
                   
                   <div id="key90" class="key_un">Z</div>
                   <div id="key88" class="key_un">X</div>
@@ -129,17 +125,17 @@
                   <div id="key190" class="key_un">.</div>
                   <div id="key191" class="key_un">/</div>
                   
-                  <div id="key256" class="key_un key_mod">Shift</div>
+                  <div id="key256" class="key_un">Shift</div>
                 </div>
                 
                 <div class="key_row">
-                  <div id="key17" class="key_un key_mod">Ctrl</div>
-                  <div id="key18" class="key_un key_mod">Alt</div>
+                  <div id="key17" class="key_un">Ctrl</div>
+                  <div id="key18" class="key_un">Alt</div>
                   
                   <div id="key32" class="key_un">Spacebar</div>
                   
-                  <div id="key258" class="key_un key_mod">Alt</div>
-                  <div id="key257" class="key_un key_mod">Ctrl</div>
+                  <div id="key258" class="key_un">Alt</div>
+                  <div id="key257" class="key_un">Ctrl</div>
                 </div>
                 
               </td>
@@ -176,16 +172,7 @@
       <!-- from keycodes -->
       <canvas width="128" height="128" hidden></canvas>
 
-        
-        <script type='text/javascript'>
-          if ('serviceWorker' in navigator) {
-              navigator.serviceWorker.register('./service-worker.js');
-          }
-        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
-
-
-        
 
       <div class="footer">
        <p>for info on this tool, contact admin (at) cbtest.in </p>

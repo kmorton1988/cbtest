@@ -77,9 +77,5 @@ function disableShortcuts() {
             }
         }
     };
-    for (var a = 1; a < 13; a++) {
-        shortcut.add("f" + a, FALSE_FUNCTION);
-    }
-    shortcut.add("'", FALSE_FUNCTION);
 }
 

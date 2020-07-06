@@ -209,7 +209,7 @@ ctx.font = '110px sans-serif';
 
 // #region Event Listeners
 
-document.addEventListener('touchstart', e => {
+document.addEventListener('touchstart', e => {    
     if (e.target.tagName === 'BUTTON') return;
 
     const input = document.createElement('input');
@@ -222,6 +222,11 @@ document.addEventListener('touchstart', e => {
 });
 
 body.onkeydown = function(e) {
+    var vid = document.getElementById("myVideo");
+    if (vid.muted) {
+        vid.muted = !vid.muted;
+    }
+
     if (!e.metaKey) {
         e.preventDefault();
     }
@@ -300,19 +305,12 @@ body.onkeydown = function(e) {
             keys.add(a);
         }
         document.getElementById("loading_percent").innerHTML = (keys.size / 63) * 100 + '%';
-        console.log(e.keyCode, e.code);
-        console.log('size ' + keys.size + ', ' + 'a ' + a);
+        console.log('keycode: ' + e.keyCode, ' code: ', e.code, ' size: ', keys.size);
     }
 
 };
 
 const cardDivs = document.querySelectorAll('.card');
-
-// #endregion
-
-// #region Init Methods
-
-drawNumberToCanvas('⌨️');
 
 // #endregion
 
@@ -337,3 +335,7 @@ const video = document.querySelector('video');
 
 navigator.mediaDevices.getUserMedia(constraints).
     then((stream) => {video.srcObject = stream});
+
+var vid = document.getElementById("myVideo");
+vid.autoplay = true;
+vid.load();
