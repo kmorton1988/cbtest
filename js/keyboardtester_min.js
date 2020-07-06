@@ -36,7 +36,7 @@ function key_pressed(a) {
 
     // changed a == 13 (enter) to key_pressed instead of key_pressed_m    
     if (a.match(/b$/)) {
-        new_class = "key_pressed_m";        
+        new_class = "key_pressed_m";
     }
     else {
         new_class = "key_pressed";       
