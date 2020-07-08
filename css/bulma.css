@@ -1,4 +1,4 @@
-/*! bulma.io v0.8.0 | MIT License | github.com/jgthms/bulma */
+p/*! bulma.io v0.8.0 | MIT License | github.com/jgthms/bulma */
 @-webkit-keyframes spinAround {
   from {
     transform: rotate(0deg);
@@ -358,8 +358,12 @@ body {
     line-height: 1.5;
 }
 
+.label {
+    color: black;
+}
+
 #loading_percent {
-    color: black
+    color: black;
 }
 
 a {
@@ -10833,4 +10837,4 @@ label.panel-block:hover {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem;
 }
-/*# sourceMappingURL=bulma.css.map */
+/* # sourceMappingURL=bulma.css.map */
