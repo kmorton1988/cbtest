@@ -321,12 +321,7 @@ function hasGetUserMedia() {
               navigator.mediaDevices.getUserMedia);
 }
 
-// if (hasGetUserMedia()) {
-//     // Good to go!
-// } else {
-//     alert('Use another tool to test the webcam');
-// }
-
+// new webcam javascript
 // Prefer camera resolution nearest to 1280x720.
 var constraints = { video: { width: 1280, height: 720 } }; 
 
@@ -340,16 +335,3 @@ navigator.mediaDevices.getUserMedia(constraints)
 })
 .catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
 
-
-// const constraints = {
-//     video: true
-// };
-
-// const video = document.querySelector('video');
-
-// navigator.mediaDevices.getUserMedia(constraints).
-//     then((stream) => {video.srcObject = stream});
-
-// var vid = document.getElementById("myVideo");
-// vid.autoplay = true;
-// vid.load();
