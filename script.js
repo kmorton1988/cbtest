@@ -321,11 +321,11 @@ function hasGetUserMedia() {
               navigator.mediaDevices.getUserMedia);
 }
 
-if (hasGetUserMedia()) {
-    // Good to go!
-} else {
-    alert('Use another tool to test the webcam');
-}
+// if (hasGetUserMedia()) {
+//     // Good to go!
+// } else {
+//     alert('Use another tool to test the webcam');
+// }
 
 const constraints = {
     video: true
