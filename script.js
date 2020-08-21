@@ -2,6 +2,68 @@
 
 // #region Declare Variables
 
+let chromebook = new Set();
+
+function buildChromebook() {
+    chromebook.add(13);
+    chromebook.add(16);
+    chromebook.add(17);
+    chromebook.add(18);
+    chromebook.add(188);
+    chromebook.add(190);
+    chromebook.add(191);
+    chromebook.add(192);
+    chromebook.add(219);
+    chromebook.add(220);
+    chromebook.add(221);
+    chromebook.add(222);
+    chromebook.add(27);
+    chromebook.add(32);
+    chromebook.add(37);
+    chromebook.add(38);
+    chromebook.add(39);
+    chromebook.add(40);
+    chromebook.add(48);
+    chromebook.add(49);
+    chromebook.add(50);
+    chromebook.add(51);
+    chromebook.add(52);
+    chromebook.add(53);
+    chromebook.add(54);
+    chromebook.add(55);
+    chromebook.add(56);
+    chromebook.add(57);
+    chromebook.add(65);
+    chromebook.add(66);
+    chromebook.add(67);
+    chromebook.add(68);
+    chromebook.add(69);
+    chromebook.add(70);
+    chromebook.add(71);
+    chromebook.add(72);
+    chromebook.add(73);
+    chromebook.add(74);
+    chromebook.add(75);
+    chromebook.add(76);
+    chromebook.add(77);
+    chromebook.add(78);
+    chromebook.add(79);
+    chromebook.add(8);
+    chromebook.add(80);
+    chromebook.add(81);
+    chromebook.add(82);
+    chromebook.add(83);
+    chromebook.add(84);
+    chromebook.add(85);
+    chromebook.add(86);
+    chromebook.add(87);
+    chromebook.add(88);
+    chromebook.add(89);
+    chromebook.add(9);
+    chromebook.add(90);
+}
+buildChromebook();
+
 const keyCodes = {
     0: 'That key has no keycode',
     3: 'break',
@@ -221,6 +283,10 @@ document.addEventListener('touchstart', e => {
     }, 100);
 });
 
+function isChromebook(a) {
+    return chromebook.has(a);
+}
+
 body.onkeydown = function(e) {
     var vid = document.getElementById("myVideo");
     if (vid.muted) {
@@ -300,14 +366,13 @@ body.onkeydown = function(e) {
         key_highlight(a + "b");
     }
 
-    if (!(keys.has(a))) {
+    if (isChromebook(a) && !(keys.has(a))) {
         if (!(a >= 112 && a <=123) && (a != 166) && (a != 167)) {
             keys.add(a);
         }
-        document.getElementById("loading_percent").innerHTML = (keys.size / 63) * 100 + '%';
-        console.log('keycode: ' + e.keyCode, ' code: ', e.code, ' size: ', keys.size);
+        document.getElementById("loading_percent").innerHTML = 'Keyboard: ' + (keys.size / 56) * 100 + '%';
+        console.log('keycode: ' + e.keyCode, ' code: ', e.code, ' size: ', keys.size, ' c_size: ', chromebook.size );
     }
-
 };
 
 const cardDivs = document.querySelectorAll('.card');
@@ -334,4 +399,19 @@ navigator.mediaDevices.getUserMedia(constraints)
   };
 })
 .catch(function(err) { console.log(err.name + ": " + err.message); }); // always check for errors at the end.
+
+// handle battery charging
+function updateBatteryStatus(battery) {
+    document.querySelector('#charging').textContent =  battery.charging ? 'Charging: Yes' : 'Charging: No';
+}
+
+navigator.getBattery().then(function(battery) {
+    // Update the battery status initially when the promise resolves ...
+    updateBatteryStatus(battery);
+
+    // .. and for any subsequent updates.
+    battery.onchargingchange = function () {
+        updateBatteryStatus(battery);
+    };
+});
 

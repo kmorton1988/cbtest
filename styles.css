@@ -1,32 +1,39 @@
 .videofeed {
-	background-color: #666;
+    background-color: #666;
     margin: 10px auto;
     height: 250px; 
     text-align:center;
 }
 
 .video {
-	margin: 0 auto;  
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 .footer {
- 	font-size: 65%;
-	color: #aaa;
+    font-size: 65%;
+    color: #aaa;
     margin: 0 auto;
-  	text-align: center;
+    text-align: center;
 }
 
 .crosh {
-  	float:right;	
-  	padding: 10px;
-	background-color: #ddd;
+    float:right;	
+    padding: 10px;
+    background-color: #ddd;
     border: 1px gray;
-  	border-radius: 10%;
-	color: #444;
+    border-radius: 10%;
+    color: #444;
     font-weight: bold;
 }
 
 .crosh:hover {
-  	background-color: #aaa;
+    background-color: #aaa;
     color: #222;
-  
+}
+
+.tile {
+    display: flex;
+    flex-direction: row;
+}
+
