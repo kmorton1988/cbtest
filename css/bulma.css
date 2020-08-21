@@ -9835,10 +9835,6 @@
 /*   } */
 /* } */
 
-.tile {
-    display: flex;
-    flex-direction: row;
-}
 
 /* .tile.is-ancestor { */
 /*   margin-left: -0.75rem; */
