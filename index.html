@@ -34,14 +34,12 @@
     <div class="section">
       <div class="container is-widescreen">
         <div class="tile is-ancestor">
-          <div class="tile is-5 videofeed">
+          <div class="tile videofeed">
             <video autoplay class="video"></video>
           </div>  
-          <div class="tile is-5 videofeed">
+          <div class="tile videofeed">
             <video id="myVideo" width="400" controls playsinline autoplay muted loopclass="video">
               <source src="mov_bbb.mp4" type="video/mp4">
-                <source src="mov_bbb.ogg" type="video/ogg">
-                  Your browser does not support HTML5 video.
             </video> 
           </div>
         </div>
@@ -50,7 +48,15 @@
         <div class="container is-widescreen kbtest">
           <div id="resetbutton">
           </div>
-
+          
+          <a href="https://webcamtests.com/" target="_blank" rel="noopener noreferrer">Webcam Test Backup</a>
+          <br>
+          <br>
+          <div id="charging">(charging state unknown)</div>
+          <br>
+          <div id="loading_percent">Keyboard: 0%</div>
+          <br>
+          
           <table id="keyboard">
             <tr class="key_small"><td><div class="key_row"><div id="key27" class="key_un">Esc</div>
             </tr>
@@ -154,7 +160,6 @@
                     <td id="key39" class="key_un">&rarr;</td>
                   </tr>
                 </table>
-              <td id="loading_percent">0%</td>
             </td></tr>
 
           </table>
