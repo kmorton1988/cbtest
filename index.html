@@ -6,27 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chromebook Test</title>
 
-    <script
-      src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-      integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-      crossorigin="anonymous"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.js"
-      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-      crossorigin="anonymous"></script>
-    
-    <script type="text/javascript" language="JavaScript" 
-            src="js/keyboardtester_min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bulma.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="styles.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="css/keyboardtester_min.css" media="screen" />
-    
-    <!-- from keycodes -->
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css" />
-    <link rel="icon" href="">
     
   </head>
   <body>
@@ -38,17 +18,14 @@
             <video autoplay class="video"></video>
           </div>  
           <div class="tile videofeed">
-            <video id="myVideo" width="400" controls playsinline autoplay muted loopclass="video">
+            <video id="myVideo" width="400" controls playsinline muted loopclass="video">
               <source src="mov_bbb.mp4" type="video/mp4">
             </video> 
           </div>
         </div>
 
         <!-- Beginning of Keyboard Test-->
-        <div class="container is-widescreen kbtest">
-          <div id="resetbutton">
-          </div>
-          
+        <div class="container is-widescreen kbtest">          
           <a href="https://webcamtests.com/" target="_blank" rel="noopener noreferrer">Webcam Test Backup</a>
           <br>
           <br>
@@ -166,14 +143,13 @@
           
           <!--End of Keyboard Test-->
 
+
         </div>
       </div>
       </div>
 
       <!-- from keycodes -->
       <canvas width="128" height="128" hidden></canvas>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
 
       <div class="footer">
        <p>for info on this tool, contact admin (at) cbtest.in </p>
